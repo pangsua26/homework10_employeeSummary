@@ -10,14 +10,44 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const employee = [];
+const newEmployee = () => {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the name of the employee?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the ID of the employee?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the employee's email address?"
+        },
+        {
+            type: "list",
+            name: "role",
+            message: "What is teh employee's role?",
+            choices: ["Manager", "Engineer", "Intern"]
+        }
+           
+
+
+    ])
+    
+
+
+}
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
-
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
@@ -33,3 +63,4 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
