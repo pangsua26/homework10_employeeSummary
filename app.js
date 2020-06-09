@@ -78,13 +78,17 @@ const newEmployee = () => {
                     newIntern.role = "Intern";
                     employee.push(newIntern);
                     addEmployee();
-                })
-            
+                });
+            break;
         }
     })
-    
-
-
+};
+const addEmployee = () => {
+    inquirer.prompt({
+        type: "confirm",
+        name: "addEmployee",
+        message: "Would you like to add a new employee?"
+    })
 }
 
 // Write code to use inquirer to gather information about the development team members,
