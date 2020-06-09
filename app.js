@@ -34,10 +34,24 @@ const newEmployee = () => {
             message: "What is teh employee's role?",
             choices: ["Manager", "Engineer", "Intern"]
         }
+    ]).then(function(response) {
+        switch (response.role) {
+            case "Manager":
+                inquirer.prompt(
+                    {
+                        type: "input",
+                        name: "officeNumber",
+                        message: "What is the manager's office number?"
+                    }
+                ).then(function(managerResponse){
+                    const newManager = new Manager(response.name, response.id, response.email, managerResponse.officeNumber);
+                    newManager.role = "Manager";
+                    employee.push(newManager);
+                    addEmployee();
+                });
            
-
-
-    ])
+        }
+    })
     
 
 
