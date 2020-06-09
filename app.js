@@ -31,7 +31,7 @@ const newEmployee = () => {
         {
             type: "list",
             name: "role",
-            message: "What is teh employee's role?",
+            message: "What is the employee's role?",
             choices: ["Manager", "Engineer", "Intern"]
         }
     ]).then(function(response) {
@@ -100,6 +100,17 @@ const addEmployee = () => {
         }
     })
 }
+if (fs.existsSync(OUTPUT_DIR)){
+    console.log("Output Path Exits")
+    } else {
+        fs.mkdir(OUTPUT_DIR, function(error){
+            if(error) {return console.error(error);
+            } 
+            console.log("Employee summary created");
+        })
+    };
+
+addEmployee();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
