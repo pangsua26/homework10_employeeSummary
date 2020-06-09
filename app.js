@@ -73,7 +73,12 @@ const newEmployee = () => {
                         name: "school",
                         message: "What school does the intern attend?"
                     }
-                )
+                ).then(function(internResponse){
+                    const newIntern = new Intern(response.name, response.id, response.email, internResponse.school);
+                    newIntern.role = "Intern";
+                    employee.push(newIntern);
+                    addEmployee();
+                })
             
         }
     })
