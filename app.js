@@ -63,7 +63,18 @@ const newEmployee = () => {
                    newEngineer.role = "Engineer";
                    employee.push(newEngineer);
                    addEmployee();
-               })
+               });
+            break;
+
+            case "Intern":
+                inquirer.prompt(
+                    {
+                        type: "input",
+                        name: "school",
+                        message: "What school does the intern attend?"
+                    }
+                )
+            
         }
     })
     
