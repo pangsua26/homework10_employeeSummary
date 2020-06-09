@@ -49,7 +49,16 @@ const newEmployee = () => {
                     employee.push(newManager);
                     addEmployee();
                 });
+           break;
            
+           case "Engineer":
+               inquirer.prompt(
+                   {
+                       type: "input",
+                       name: "github",
+                       message: "What is the engineer's Github username?"
+                   }
+               )
         }
     })
     
