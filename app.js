@@ -59,7 +59,7 @@ const newEmployee = () => {
                        message: "What is the engineer's Github username?"
                    }
                ).then(function(engineerResponse){
-                   const newEngineer = new Engineer(response.name, repsonse.id, response.email, engineerResponse.github);
+                   const newEngineer = new Engineer(response.name, response.id, response.email, engineerResponse.github);
                    newEngineer.role = "Engineer";
                    employee.push(newEngineer);
                    addEmployee();
