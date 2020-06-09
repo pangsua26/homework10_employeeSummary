@@ -88,6 +88,16 @@ const addEmployee = () => {
         type: "confirm",
         name: "addEmployee",
         message: "Would you like to add a new employee?"
+    }).then(function(response){
+        if (response.addEmployee){
+            newEmployee();
+        } else {
+            fs.writeFile(outputPath,render(employee), "utf8", function(error){
+                if (error) {return console.log (error)};
+
+                console.log("New employee added!")
+            })
+        }
     })
 }
 
